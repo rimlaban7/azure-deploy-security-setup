@@ -1,5 +1,7 @@
-# Deploy to Azure Demo
+# Deploy to Azure Guide
 Step-by-step guide showing how to use GitHub Actions to deploy infrastructure to Azure; deploy Docker image to deployed infrastructure; tear down infrastrucutre.  This also covers using two environments: STAGE and PROD.
+
+# Configure permissions and GitHub secrets
 
 ### 1: Configure `GITHUB_TOKEN` permissions
 
