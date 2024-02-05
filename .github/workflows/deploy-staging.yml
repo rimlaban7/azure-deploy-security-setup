@@ -14,7 +14,7 @@ env:
   ###############################################
 
 jobs:
-  build:
+  Build-Code:
     if: contains(github.event.pull_request.labels.*.name, 'stage')
 
     runs-on: ubuntu-latest
@@ -35,8 +35,11 @@ jobs:
 
   Build-Docker-Image:
     runs-on: ubuntu-latest
-    needs: build
+    
+    needs: Build-Code
+    
     name: Build image and store in GitHub Container Registry
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -70,10 +73,13 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-  Deploy-to-Azure:
+  Deploy-Docker-Image-to-Azure:
     runs-on: ubuntu-latest
+    
     needs: Build-Docker-Image
+    
     name: Deploy app container to Azure
+   
     steps:
       - name: "Login via Azure CLI"
         uses: azure/login@v1
