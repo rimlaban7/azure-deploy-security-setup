@@ -34,7 +34,7 @@ jobs:
 
   Build-Docker-Image:
     runs-on: ubuntu-latest
-    needs: build
+    needs: Build-Code
     name: Build image and store in GitHub Container Registry
     steps:
       - name: Checkout
