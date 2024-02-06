@@ -1,5 +1,11 @@
 # Deploy to Azure Guide
-Step-by-step guide showing how to configure GitHub to allow deployments to Azure.
+Step-by-step guide showing how to configure GitHub to allow deployments to Azure.  The below steps are quick-start steps.  OpenID Connect offers a more secure path.  From GitHub's documentation:
+
+```
+However, using hardcoded secrets requires you to create credentials in the cloud provider and then duplicate them in GitHub as a secret.
+
+With OpenID Connect (OIDC), you can take a different approach by configuring your workflow to request a short-lived access token directly from the cloud provider. Your cloud provider also needs to support OIDC on their end, and you must configure a trust relationship that controls which workflows are able to request the access tokens. Providers that currently support OIDC include Amazon Web Services, Azure, Google Cloud Platform, and HashiCorp Vault, among others.
+```
 
 # Configure permissions and GitHub secrets
 
